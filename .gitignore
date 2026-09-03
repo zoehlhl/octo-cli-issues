@@ -1,0 +1,4 @@
+.env
+*.token
+credentials.json
+patrol-state.json
