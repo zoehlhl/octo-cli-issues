@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 通过 Octo 群提交
+    url: https://octo.example.com
+    about: 直接在 Octo 群里告诉产品管家 Agent 你的问题或需求
