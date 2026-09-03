@@ -1,0 +1,22 @@
+# Labels 配置
+# 用 GitHub CLI 批量创建：gh label create ...
+
+- name: bug
+  color: d73a4a
+  description: 预期外的行为
+
+- name: enhancement
+  color: a2eeef
+  description: 新功能需求
+
+- name: wontfix
+  color: ffffff
+  description: 已评审，决定不做
+
+- name: prd-ready
+  color: 0075ca
+  description: PRD 已由产品管家 Agent 撰写完毕
+
+- name: reviewing
+  color: e4e669
+  description: 正在评审中
