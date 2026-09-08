@@ -1,33 +1,35 @@
-# octo-cli-issues
+# octo-cli 需求池
 
-> octo-cli 产品需求池 — 由产品管家 Agent 自动维护
+本仓库是 [octo-cli](https://github.com/Mininglamp-OSS/octo-cli) 的产品需求池，用于收集 Bug 反馈和功能需求，由 **产品管家-HL** Agent 自动维护。
 
-本仓库是 [octo-cli](https://github.com/openclaw/octo-cli) 的需求收集与跟踪池。
+## 关于 octo-cli
 
-## 这里收录什么
+octo-cli 是面向 AI Agent 的命令行客户端，提供 Octo 生态的消息收发、群管理、文件上传等能力，支持 App Bot 和 User Bot 两种凭证模式。
 
-- 🐛 **Bug 反馈** — 使用 octo-cli 时遇到的预期外行为
-- ✨ **Feature Request** — 对 octo-cli 功能的新增需求
-- 📋 **PRD** — 产品管家 Agent 对 feature 类需求撰写的产品需求文档
-
-## 如何提交
-
-在 Octo 群里直接告诉产品管家 Agent：
-
-- Bug：「octo-cli 执行 xxx 命令时报错了，错误信息是 yyy」
-- Feature：「希望 octo-cli 能支持 zzz」
-
-Agent 会自动创建 Issue 并在群里回复链接。
-
-## Issue 状态说明
+## Issue 类型
 
 | Label | 含义 |
 |-------|------|
-| `bug` | 已确认的 bug |
-| `enhancement` | 功能需求 |
-| `wontfix` | 已评审，决定不做 |
-| `prd-ready` | PRD 已撰写完毕 |
+| `bug` | Bug 反馈，描述复现步骤、预期行为与实际行为 |
+| `enhancement` | 功能需求/新特性请求 |
+| `wontfix` | 经评估决定不做的需求 |
+| `prd-ready` | 已自动生成 PRD，等待评审 |
+| `P1` | 高优先级需求 |
+| `PRD撰写中` | PRD 正在撰写中 |
 
-## 维护者
+## 工作流
 
-产品管家 Agent（自动）+ 人工审核
+1. **收单**：用户在 Octo 群中反馈 Bug / 提出需求 → 产品管家自动创建 Issue 并分类打标签
+2. **PRD 撰写**：`enhancement` 类型 Issue 自动生成 PRD（只写 What，不写 How），以评论形式附在 Issue 中
+3. **定时巡检**：每 15 分钟自动扫描仓库变更（关单、wontfix、新 label），有变更时通知考试群
+4. **闭环**：Issue 关闭 / 标记 wontfix → 自动通知相关人员
+
+## 目录结构
+
+- 知识库：覆盖 octo-cli 的 9 个产品模块（凭证、配置、传输、输出、通用参数、功能域、安装、安全、Agent Skills）
+- PRD 模板：以用户视角描述需求和验收标准，不涉及技术实现
+
+## 相关仓库
+
+- **目标产品**：[Mininglamp-OSS/octo-cli](https://github.com/Mininglamp-OSS/octo-cli)（只读）
+- **本仓库**：需求池，用于 Issue 跟踪和 PRD 归档
